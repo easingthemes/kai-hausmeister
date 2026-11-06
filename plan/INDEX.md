@@ -6,8 +6,8 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** planning · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F02](features/F02-docker-stack.md): Caddy `import` line in the main Caddyfile.
-2. [F02](features/F02-docker-stack.md): first deploy, then [F04](features/F04-n8n-live.md) owner account.
+1. [F04](features/F04-n8n-live.md): owner account, first backup, write down update procedure.
+2. [F03](features/F03-github-access.md): webhook + fine-grained token in target repo.
 
 ## Features
 
@@ -15,9 +15,9 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | ID | Feature | Phase | Status | Depends on |
 |---|---|---|---|---|
 | [F01](features/F01-server-check.md) | Check server (RAM, Docker) | 0 setup | done | – |
-| [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | in-progress | F01, D007 |
+| [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | done | F01, D007 |
 | [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | todo | F04 |
-| [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | todo | F02 |
+| [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | in-progress | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | todo | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | todo | F05 |
 | [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | todo | F05 |
