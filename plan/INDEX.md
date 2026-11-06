@@ -7,8 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. [F05](features/F05-triage-comment.md): check cost per run in Anthropic console (data still pending).
-2. Run the off-server backup workflow once and check the artifact.
-3. [F06](features/F06-workflow-export.md): export final workflow (placeholder secret).
+2. [F06](features/F06-workflow-export.md): export final workflow (placeholder secret).
 
 ## Features
 
