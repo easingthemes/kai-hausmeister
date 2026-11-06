@@ -17,12 +17,12 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - A small VPS.
 - Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a site file imported by the main Caddyfile.
 - n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
-- Phases 1–2 run here. Phase 3 (sandbox running untrusted code) should get a separate small server.
+- Phases 1–2 run here. Phase 3 runs on GitHub Actions runners (D015), not on this server.
 
 ## Flow (phases)
 1. **Triage comment.** Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
 2. **Labels + duplicates.** Agent proposes a label and links similar open issues.
-3. **Fix in sandbox.** Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
+3. **Fix in sandbox.** Maintainer adds a label named after a dx skill (e.g. `dx-bug-all`) → GitHub Actions in the target repo runs Claude Code on a fresh VM → PR for review. n8n is not involved ([D015](../plan/decisions/D015-phase3-github-actions.md)).
 
 ## Security
 - **Target repo is public: anyone can open an issue.** Issue text goes into the agent (prompt injection). Use a fine-grained token: comments only, one repo; no code write in phases 1–2.

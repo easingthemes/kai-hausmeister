@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · D015, D005, F08, Q3, R7 · Phase 3 via GitHub Actions in the target repo (supersedes D005 for phase 3); F08 plan; Q3 opened.
 - 2026-11-06 · F07, D014 · Deploy via API works; Caddy blocks /api from outside; F07 done (duplicate found, labels set). Phase 2 complete.
 - 2026-11-06 · D014 · Workflows deploy from the repo via n8n public API (researched options); Caddy blocks /api/* from outside.
 - 2026-11-06 · D013, F07 · Whitelisted labels + duplicate search (open + closed) added to the workflow.
