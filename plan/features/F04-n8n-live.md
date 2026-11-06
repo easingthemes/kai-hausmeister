@@ -24,5 +24,6 @@ n8n running on the VPS, owner account created, basic ops known.
 - UI reachable over HTTPS, test webhook workflow receives a request.
 
 ## Notes
+- 2026-11-06: first backup OK via ops workflow (~0.5 MB, n8n stops a few seconds). Open: off-server copy of backups.
 - 2026-11-06: owner account created.
 - 2026-11-06: stack running and reachable over HTTPS (F02). Owner account next. Ops workflow has backup/restart/logs actions.

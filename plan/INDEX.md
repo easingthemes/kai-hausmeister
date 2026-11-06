@@ -6,7 +6,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** planning · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F04](features/F04-n8n-live.md): first backup, write down update procedure.
+1. [F04](features/F04-n8n-live.md): off-server copy of backups (last open task).
 2. Confirm [D009](decisions/D009-triage-all-issues.md) (triage every issue, with limits).
 3. [F03](features/F03-github-access.md): token + n8n credential now; webhook after F05 guards.
 
