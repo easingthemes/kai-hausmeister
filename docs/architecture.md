@@ -9,7 +9,8 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
   - **Chosen: n8n Webhook node.** Webhook is added once by hand in the target repo (Settings → Webhooks) with a secret; n8n verifies the signature. The token then needs no webhook permission.
   - Alternative: GitHub Trigger node, which creates the webhook itself, but the token needs permission to manage repo webhooks.
 - **Reading code:** agent reads files via GitHub API (contents endpoint), no clone needed.
-- **Comment / label:** fine-grained token, target repo only, `Issues: write`.
+- **Duplicates:** agent searches open and closed issues via the GitHub search API.
+- **Comment / label:** fine-grained token, target repo only, `Issues: write` + `Contents: read`.
 - **Phase 3 (fix):** container clones the target repo, creates a branch, opens a PR. Only then the token needs `Contents: write` and `Pull requests: write` (separate token).
 - **More repos later:** add the webhook there and extend the token to that repo; same workflow.
 
@@ -17,12 +18,14 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - A small VPS.
 - Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a site file imported by the main Caddyfile.
 - n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
+- Workflows are deployed from this repo through the n8n public API, called on the server itself; `/api/*` is not reachable from outside ([D014](../plan/decisions/D014-deploy-workflow-via-api.md)).
+- Daily encrypted off-server backup (F04).
 - Phases 1–2 run here. Phase 3 (sandbox running untrusted code) should get a separate small server.
 
 ## Flow (phases)
-1. **Triage comment.** Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
-2. **Labels + duplicates.** Agent proposes a label and links similar open issues.
-3. **Fix in sandbox.** Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
+1. **Triage comment** (live). Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file, search issues) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
+2. **Labels + duplicates** (live). Agent sets up to 3 whitelisted labels and links possible duplicates (open + closed) in the comment ([D013](../plan/decisions/D013-labels-and-duplicates.md)).
+3. **Fix in sandbox** (todo, F08). Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
 
 ## Security
 - **Target repo is public: anyone can open an issue.** Issue text goes into the agent (prompt injection). Use a fine-grained token: comments only, one repo; no code write in phases 1–2.
