@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · Q1, D009, R2, F03, F04, F05 · Anyone can open issues: D009 proposed (auto triage with hard limits); update procedure written.
 - 2026-11-06 · F04 · Owner account created.
 - 2026-11-06 · F02, F04 · F02 done: n8n deployed and reachable over HTTPS; F04 started.
 - 2026-11-06 · F02 · Caddy import line prepared in owning project; ops repo got caddy-check / caddy-site actions.

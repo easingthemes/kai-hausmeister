@@ -16,11 +16,14 @@ updated: 2026-11-06
 Target repo (dx-aem-flow) sends `issues` events to n8n; n8n can read code and comment.
 
 ## Tasks
-- [ ] webhook in target repo: URL `https://n8n.<domain>/webhook/...`, content type JSON, secret, event `Issues`
-- [ ] fine-grained token: only target repo, `Issues: write`, `Contents: read`
-- [ ] store secret + token as n8n credentials (never in repo)
+- [ ] fine-grained token: only target repo, `Issues: Read and write`, `Contents: Read-only` (Metadata read is automatic)
+- [ ] n8n credential "GitHub API" with that token
+- [ ] webhook secret: `openssl rand -hex 32`, kept in password manager + n8n
+- [ ] webhook in target repo: URL `https://<n8n host>/webhook/github-issues`, content type `application/json`, secret, only event `Issues`
+- [ ] add webhook only after F05 guards exist (D009); until the workflow is active, deliveries return 404 (expected)
 
 ## Acceptance
 - Test issue → delivery shows 2xx in GitHub webhook log.
 
 ## Notes
+- 2026-11-06: Q1 answered: anyone can open issues → D009 (automatic triage with hard limits).

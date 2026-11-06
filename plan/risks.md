@@ -6,7 +6,7 @@ When a mitigation is done, set status and add a line to `log.md`.
 | ID | Risk | Likelihood | Impact | Mitigation | Affects | Status |
 |---|---|---|---|---|---|---|
 | R1 | Prompt injection via public issue text makes agent leak data or post harmful content | high | med | issue text treated as untrusted in prompt; token only `Issues: write` + `Contents: read`; no code write in phases 1–2 | F05, F07 | open |
-| R2 | LLM cost runs away (spam issues, agent loops) | med | med | max iterations and tokens per run; log cost per run; rate limit per author | F05 | open |
+| R2 | LLM cost runs away (spam issues, agent loops) | high | med | max iterations and tokens per run; daily run + cost cap; max 3 issues per author per day; log cost per run (D009) | F05 | open |
 | R3 | Webhook endpoint abused (fake requests) | med | med | verify GitHub signature (secret); reject everything else | F03, F05 | open |
 | R4 | Token or n8n credentials leak | low | high | fine-grained token, one repo, minimal scope; secrets only in server `.env` / n8n credentials; rotate on suspicion | F03, F04 | open |
 | R5 | VPS overloaded, n8n hurts other apps on same server | med | med | check resources first (F01); memory limit in compose; move if needed (D004) | F01, F02 | open |

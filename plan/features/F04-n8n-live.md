@@ -17,8 +17,8 @@ n8n running on the VPS, owner account created, basic ops known.
 
 ## Tasks
 - [x] start stack, create owner account (strong password)
-- [ ] backup plan for n8n volume + `N8N_ENCRYPTION_KEY`
-- [ ] update procedure (pull image, restart) written down
+- [ ] backup plan for n8n volume + `N8N_ENCRYPTION_KEY`: ops workflow action `backup` (keeps last 7 on server); key in password manager. Open: off-server copy
+- [x] update procedure written down: ops workflow "Deploy n8n" with new pinned version; rollback = same workflow with previous version (see `docker/README.md`). Take a backup first.
 
 ## Acceptance
 - UI reachable over HTTPS, test webhook workflow receives a request.
