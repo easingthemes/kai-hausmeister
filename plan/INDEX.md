@@ -3,7 +3,7 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** phase 2 live · **Last updated:** 2026-11-06
+**Phase:** phases 1–2 live, phase 3 next · **Last updated:** 2026-11-06
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
