@@ -28,7 +28,13 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 3. **Fix in sandbox** (todo, F08). Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
 
 ## Security
-- **Target repo is public: anyone can open an issue.** Issue text goes into the agent (prompt injection). Use a fine-grained token: comments only, one repo; no code write in phases 1–2.
+- **Target repo is public: anyone can open an issue.** Issue text goes into the agent (prompt injection). Its damage is limited by the token below.
+- **GitHub token (phases 1–2):** fine-grained personal access token, scoped to the target repo only:
+  - `Issues: Read and write`: read the issue, search issues, post the comment, add labels.
+  - `Contents: Read-only`: list directories and read files for the agent.
+  - `Metadata: Read-only`: added by GitHub automatically.
+  - Nothing else: no code write, no PRs, no webhook or settings access. Worst case with this token is a bad comment or label, not a code change.
+  - Stored only as an n8n credential on the server. Comments appear as the token owner's account (no bot account for now, F05).
 - Phase 3 runs only on a label set by a maintainer, never automatically.
 - Limit iterations and tokens per run; log cost per run.
 - n8n behind HTTPS, strong owner password, regular image updates.
