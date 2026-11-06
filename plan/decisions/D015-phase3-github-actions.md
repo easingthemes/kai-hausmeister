@@ -29,3 +29,4 @@ Phase 3 (F08): an agent writes and runs code to fix an issue and opens a PR. Tha
 - Target repo gets `.github/workflows/` file(s), an Anthropic credential (or federation) and branch protection on the default branch (agent PRs need review).
 - Guards move to the workflow: label allowlist, `concurrency` per issue, `timeout-minutes`, max turns, minimal `permissions`, separate Anthropic workspace with its own spend limit.
 - Open: the dx skills take an ADO/Jira work item, not a GitHub issue (Q3).
+- Update 2026-11-06 (Q3 answered): "label = dx skill name" was an example; phase 3 will not use the dx plugins for now. Label name and prompt decided when F08 starts.

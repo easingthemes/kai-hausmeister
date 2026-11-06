@@ -7,7 +7,8 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
-2. Answer [Q3](questions.md), then [F08](features/F08-sandbox-fix.md) (phase 3 via GitHub Actions, D015).
+2. [F10](features/F10-n8n-vs-gh-actions.md): research n8n vs GitHub Actions before building more.
+3. [F08](features/F08-sandbox-fix.md): phase 3, paused until F10.
 
 ## Features
 
@@ -23,6 +24,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | done | F05 |
 | [F08](features/F08-sandbox-fix.md) | Phase 3: sandboxed fix → PR | 3 | todo | F07 |
 | [F09](features/F09-n8n-cloud-compare.md) | Run on n8n Cloud, compare | later | todo | F06 |
+| [F10](features/F10-n8n-vs-gh-actions.md) | Research: n8n vs GitHub Actions for this project | later | todo | – |
 <!-- /gen:features -->
 
 Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
