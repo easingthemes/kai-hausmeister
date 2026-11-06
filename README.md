@@ -66,7 +66,7 @@ flowchart LR
     L --> GH
 ```
 
-Built with **n8n** (self-hosted, Docker Compose behind Caddy/HTTPS), the n8n **AI Agent node** with LangChain-style tools, **Anthropic Claude**, and the **GitHub REST API**. The target repository needs no code changes, only a webhook.
+Built with **n8n** (self-hosted, Docker Compose behind Caddy/HTTPS), the n8n **AI Agent node** with LangChain-style tools, **Anthropic Claude**, and the **GitHub REST API**. For triage, the target repository needs no code changes, only a webhook.
 
 Node-by-node description: [workflows/README.md](workflows/README.md) · system design: [docs/architecture.md](docs/architecture.md)
 
@@ -99,7 +99,8 @@ Anyone can open an issue, so every issue is treated as a possible prompt injecti
 |---|---|---|
 | 1 | Agentic triage comment (code-aware) | ✅ live |
 | 2 | Labels + duplicate detection | ✅ live |
-| 3 | **Autonomous fix**: a maintainer adds `agent:fix`, Claude Code runs headless in a network-restricted sandbox and opens a pull request | 🛠 planned |
+| 3 | **Autonomous fix**: a maintainer adds a fix label, Claude Code runs in an isolated sandbox (GitHub Actions VM or own sandbox server, under evaluation) and opens a pull request for review ([D015](plan/decisions/D015-phase3-runtime.md)) | 🛠 planned |
+| – | Research: n8n vs GitHub Actions, where each fits best ([F10](plan/features/F10-n8n-vs-gh-actions.md)) | 🔍 next |
 | – | Same workflow on n8n Cloud, comparison | 🗓 later |
 
 ## Use it on your repo

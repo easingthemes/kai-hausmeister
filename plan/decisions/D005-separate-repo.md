@@ -25,3 +25,5 @@ Separate repo. Target connected only via webhook + GitHub API.
 
 ## Consequences
 More repos later = add webhook + extend token.
+
+Note 2026-11-06: phase 3 may need a workflow file in the target repo, if [D015](D015-phase3-runtime.md) option A is chosen. Then a new decision supersedes this one for phase 3.

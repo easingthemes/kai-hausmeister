@@ -25,3 +25,5 @@ Existing VPS for phases 1–2.
 
 ## Consequences
 Revisit before phase 3: sandbox runs untrusted code → separate server (F08). Depends on F01 results.
+
+Update 2026-11-06: still open. Options for phase 3 (GitHub Actions vs own sandbox server) in [D015](D015-phase3-runtime.md).

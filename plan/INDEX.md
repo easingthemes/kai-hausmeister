@@ -3,12 +3,12 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** phases 1–2 live, phase 3 next · **Last updated:** 2026-11-06
+**Phase:** phases 1–2 live; phase 3 planned, runtime open (D015), paused until F10 · **Last updated:** 2026-11-06
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
-2. Open security items: see private ops repo.
-3. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
+2. [F10](features/F10-n8n-vs-gh-actions.md): research n8n vs GitHub Actions; decides where phase 3 runs (D015).
+3. [F08](features/F08-sandbox-fix.md): phase 3, paused until F10.
 
 ## Features
 
@@ -24,6 +24,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | done | F05 |
 | [F08](features/F08-sandbox-fix.md) | Phase 3: sandboxed fix → PR | 3 | todo | F07 |
 | [F09](features/F09-n8n-cloud-compare.md) | Run on n8n Cloud, compare | later | todo | F06 |
+| [F10](features/F10-n8n-vs-gh-actions.md) | Research: n8n vs GitHub Actions for this project | later | todo | – |
 <!-- /gen:features -->
 
 Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
@@ -47,6 +48,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D012](decisions/D012-webhook-secret-in-workflow.md) | Webhook secret stays in the Code node config | decided | 2026-11-06 |
 | [D013](decisions/D013-labels-and-duplicates.md) | Agent sets whitelisted labels and links possible duplicates | decided | 2026-11-06 |
 | [D014](decisions/D014-deploy-workflow-via-api.md) | Deploy workflows from the repo via the n8n public API | decided | 2026-11-06 |
+| [D015](decisions/D015-phase3-runtime.md) | Where phase 3 (fix → PR) runs: GitHub Actions, own sandbox or Managed Agents | proposed | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`

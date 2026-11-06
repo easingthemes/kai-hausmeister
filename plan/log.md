@@ -2,6 +2,11 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · D015, D005, D004 · D015 back to proposed (runtime not final: GitHub Actions vs own sandbox); D005 stays decided; docs list both options.
+- 2026-11-06 · D015, D004 · Phase 3 token (job GITHUB_TOKEN) in architecture security; D004 note: no separate server needed; INDEX phase line.
+- 2026-11-06 · D015 · Merged main into phase 3 plan; architecture + README phase 3 text follow D015 (GitHub Actions, label name open).
+- 2026-11-06 · F10, Q3, F08 · New research task n8n vs GitHub Actions; Q3 answered (no dx plugins in phase 3); F08 paused.
+- 2026-11-06 · D015, D005, F08, Q3, R7 · Phase 3 via GitHub Actions in the target repo (supersedes D005 for phase 3); F08 plan; Q3 opened.
 - 2026-11-06 · – · MIT license; README author section links GitHub portfolio and related projects.
 - 2026-11-06 · – · README rewritten as project landing page (why, features, architecture diagram, security layers, roadmap, keywords).
 - 2026-11-06 · – · Architecture: security section lists exact GitHub token permissions (labels need no extra scope).

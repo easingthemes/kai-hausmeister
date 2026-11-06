@@ -27,6 +27,7 @@ n8n Community edition is free for own use; license forbids offering n8n as a ser
 *2026-11-06, source: Anthropic model pricing (Claude API skill reference).* `claude-haiku-5-5`: $0.10 / $0.50 per MTok input / output for prompts ≤ 100K tokens ($0.50 / $2.50 above). Estimated run: 10–40K input + 1–3K output ≈ $0.002–0.006. $1/day ≈ 150+ issues. With the agent (D011, up to 8 iterations re-sending the context) worst case ≈ $0.05/run → run cap 20/day. **Measured 2026-11-06 (Anthropic console, 1 run): ~$0.01 per triage.** Run cap 20/day ≈ $0.20/day, well under the $1 cap.
 
 ## To research
+- [ ] n8n vs GitHub Actions for phases 1–3: what does n8n add? (F10)
 - [ ] n8n RAM usage idle / under load with SQLite vs Postgres (input for [D007](decisions/D007-database.md))
 - [ ] n8n execution data pruning settings (SQLite growth)
 - [x] LLM cost per triaged issue → estimate above, measure after go-live
