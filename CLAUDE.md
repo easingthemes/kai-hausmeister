@@ -35,7 +35,8 @@ plan/
 This repo is **public**. The ops repo `kai-hausmeister-private` is private.
 - Here: plans, decisions, generic architecture, conclusions.
 - Not here: IPs, hostnames, user names, paths on the server, software versions, process/app names, ports, uptime, raw check output, anything copied from private repos. Put those in the private repo (`docs/server.md`) and link to it as "private ops repo".
-- Before commit, check the diff for such details.
+- **Security findings** (leaks, weaknesses, exposed data, how to exploit something) never go here: not in files, commit messages, PR titles/bodies or issues. Describing a weakness in public is a new leak. Put them in the private repo (`docs/security.md`); here at most "see private ops repo".
+- Before commit, check the diff and the commit message for such details.
 
 ## General
 - Secrets never in the repo; only `.env.example` with variable names.

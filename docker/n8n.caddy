@@ -2,5 +2,9 @@
 # {$N8N_HOST} is replaced by the ops workflow with the real hostname.
 {$N8N_HOST} {
 	encode zstd gzip
+	# n8n public API only from the server itself (deploys go via localhost, D014).
+	# The editor UI uses /rest/, webhooks use /webhook/: both stay reachable.
+	@publicapi path /api/*
+	respond @publicapi 404
 	reverse_proxy 127.0.0.1:5678
 }
