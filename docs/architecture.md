@@ -10,7 +10,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
   - Alternative: GitHub Trigger node, which creates the webhook itself, but the token needs permission to manage repo webhooks.
 - **Reading code:** agent reads files via GitHub API (contents endpoint), no clone needed.
 - **Comment / label:** fine-grained token, target repo only, `Issues: write`.
-- **Phase 3 (fix):** container clones the target repo, creates a branch, opens a PR. Only then the token needs `Contents: write` and `Pull requests: write` (separate token).
+- **Phase 3 (fix):** a GitHub Actions workflow in the target repo, triggered by a label, clones, branches and opens a PR with the job's own `GITHUB_TOKEN` (`contents`/`pull-requests: write`). Exception to "no changes in the target repo" ([D015](../plan/decisions/D015-phase3-github-actions.md)).
 - **More repos later:** add the webhook there and extend the token to that repo; same workflow.
 
 ## Server
