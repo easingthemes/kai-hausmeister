@@ -23,7 +23,12 @@ GitHub webhook → Verify & filter → Get issue → Guards → Triage agent →
 | Prepare comment | Takes the `LABELS:` line, keeps only whitelisted labels (max 3); strips images, non-github links and @mentions; adds footer |
 | Add labels | Adds the filtered labels (empty list = nothing added) |
 
-### Setup
+### Deploy changes (D014)
+After a change to `triage.json` is merged: private ops repo → Actions → **Deploy workflow** (ref `main`). It updates the existing workflow in n8n through the public API (same id, same webhook URL), injects the webhook secret and credential ids, and publishes it. No manual import.
+
+Edits made directly in the n8n UI are overwritten by the next deploy. Change the repo instead, or export first (below).
+
+### First setup (new instance)
 1. `NODE_FUNCTION_ALLOW_BUILTIN=crypto` in the n8n container (in `docker/docker-compose.yml`; redeploy once).
 2. Import `triage.json`.
 3. Credentials: select yours in **Get issue**, **Post comment**, **Add labels**, **List directory**, **Read file**, **Search issues** (GitHub) and **Claude Haiku** (Anthropic). Names in the file: `GitHub dx-aem-flow`, `Anthropic hausmeister`.

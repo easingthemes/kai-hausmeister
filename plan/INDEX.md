@@ -6,7 +6,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** phase 1 live · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F07](features/F07-labels-duplicates.md): update the live workflow, test with a duplicate issue.
+1. [F07](features/F07-labels-duplicates.md): n8n API key + secrets, run "Deploy workflow" (D014), test with a duplicate issue.
 2. R11: ask GitHub Support to purge old unreferenced commits.
 3. Watch real issues (quality, cost).
 
@@ -46,6 +46,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D011](decisions/D011-ai-agent-node.md) | AI Agent node with GitHub tools for triage (phase 1) | decided | 2026-11-06 |
 | [D012](decisions/D012-webhook-secret-in-workflow.md) | Webhook secret stays in the Code node config | decided | 2026-11-06 |
 | [D013](decisions/D013-labels-and-duplicates.md) | Agent sets whitelisted labels and links possible duplicates | decided | 2026-11-06 |
+| [D014](decisions/D014-deploy-workflow-via-api.md) | Deploy workflows from the repo via the n8n public API | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`

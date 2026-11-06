@@ -19,7 +19,7 @@ Agent proposes/sets a label and links similar open issues.
 - [x] decide: whitelisted labels set automatically, duplicates linked (D013)
 - [x] workflow: "Search issues" tool (open + closed), duplicates section in comment
 - [x] workflow: agent proposes labels, code filters by whitelist, labels set after the comment
-- [ ] update the live workflow in n8n and test
+- [ ] deploy via "Deploy workflow" (D014) and test with a duplicate issue
 
 ## Acceptance
 - Duplicate test issue gets link to the original.
