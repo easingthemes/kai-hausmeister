@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F05 · Comments stay on the owner account (no bot account for now).
 - 2026-11-06 · F03, F05 · F03 done; first end-to-end triage on a test issue worked.
 - 2026-11-06 · D010, D011, F05 · Real agent preferred: D011 (AI Agent node + GitHub tools) supersedes D010; workflow rebuilt.
 - 2026-11-06 · F05 · Docs: n8n 2.x uses Publish instead of Activate.

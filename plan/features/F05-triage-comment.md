@@ -19,7 +19,7 @@ New issue in target repo gets one comment from the agent: type, affected area, n
 - [x] workflow drafted: `workflows/triage.json` (D011: AI Agent node + read-only GitHub tools, Haiku)
 - [x] import in n8n, set credentials + webhook secret, publish
 - [x] end-to-end test: test issue in target repo got a triage comment (2026-11-06)
-- [ ] comments are posted as the token owner's account; consider a dedicated bot account or GitHub App
+- [x] comments are posted as the token owner's account: OK for now (owner decision 2026-11-06); revisit if a bot account is needed
 - [x] verify `X-Hub-Signature-256` (HMAC SHA-256 over raw body with webhook secret); reject otherwise
 - [x] guards from D009: max 8 iterations, daily run cap 20 (cost proxy for $1/day, D011), max 3 issues per author per day, ignore bots, truncate issue text
 - [ ] Anthropic workspace spend limit as hard stop
