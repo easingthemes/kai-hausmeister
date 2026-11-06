@@ -7,7 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. [F04](features/F04-n8n-live.md): off-server copy of backups (last open task).
-2. Confirm [D009](decisions/D009-triage-all-issues.md) (triage every issue, with limits).
+2. [F05](features/F05-triage-comment.md): build triage workflow with D009 guards ($1/day).
 3. [F03](features/F03-github-access.md): token + n8n credential now; webhook after F05 guards.
 
 ## Features
@@ -41,7 +41,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D006](decisions/D006-webhook-node.md) | Webhook node + manual webhook (not GitHub Trigger node) | decided | 2026-11-06 |
 | [D007](decisions/D007-database.md) | SQLite or Postgres | decided | 2026-11-06 |
 | [D008](decisions/D008-ops-via-private-actions.md) | Server ops via GitHub Actions in a private repo | decided | 2026-11-06 |
-| [D009](decisions/D009-triage-all-issues.md) | Triage every new issue automatically, with hard limits | proposed | 2026-11-06 |
+| [D009](decisions/D009-triage-all-issues.md) | Triage every new issue automatically, with hard limits | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`
