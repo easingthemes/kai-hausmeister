@@ -21,7 +21,7 @@ New issue in target repo gets one comment from the agent: type, affected area, n
 - [x] end-to-end test: test issue in target repo got a triage comment (2026-11-06)
 - [x] comments are posted as the token owner's account: OK for now (owner decision 2026-11-06); revisit if a bot account is needed
 - [x] verify `X-Hub-Signature-256` (HMAC SHA-256 over raw body with webhook secret); reject otherwise
-- [x] guards from D009: max 8 iterations, daily run cap 20 (cost proxy for $1/day, D011), max 3 issues per author per day, ignore bots, truncate issue text
+- [x] guards from D009: max 10 iterations (raised from 8 in F07), daily run cap 20 (cost proxy for $1/day, D011), max 3 issues per author per day, ignore bots, truncate issue text
 - [x] Anthropic workspace spend limit as hard stop (set 2026-11-06)
 - [x] prompt treats issue text as untrusted, delimited data (prompt injection, R1)
 - [x] comment marked as automated
