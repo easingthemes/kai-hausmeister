@@ -2,6 +2,8 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · D013, F07 · Whitelisted labels + duplicate search (open + closed) added to the workflow.
+- 2026-11-06 · R11 · Repo audit: no secrets or private data in tree or reachable history; old force-pushed commits still reachable by SHA (server specifics).
 - 2026-11-06 · F05, F06 · F05 done (spend limit set). F06 done: live workflow matches repo; sanitize script for future exports. Phase 1 complete.
 - 2026-11-06 · F05 · Measured cost ~$0.01 per triage (first run).
 - 2026-11-06 · F04 · First off-server backup OK; schedule weekly.
