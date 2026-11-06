@@ -20,7 +20,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - Phases 1–2 run here. Phase 3 (sandbox running untrusted code) should get a separate small server.
 
 ## Flow (phases)
-1. **Triage comment.** Webhook (issues: opened, signature check) → guards (D009) → Claude picks files from the repo tree → Claude writes the triage → GitHub comment. Fixed two-call pipeline, no agent loop ([D010](../plan/decisions/D010-fixed-pipeline.md)); details in [`workflows/README.md`](../workflows/README.md).
+1. **Triage comment.** Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
 2. **Labels + duplicates.** Agent proposes a label and links similar open issues.
 3. **Fix in sandbox.** Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
 

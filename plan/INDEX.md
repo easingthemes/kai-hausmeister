@@ -42,7 +42,8 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D007](decisions/D007-database.md) | SQLite or Postgres | decided | 2026-11-06 |
 | [D008](decisions/D008-ops-via-private-actions.md) | Server ops via GitHub Actions in a private repo | decided | 2026-11-06 |
 | [D009](decisions/D009-triage-all-issues.md) | Triage every new issue automatically, with hard limits | decided | 2026-11-06 |
-| [D010](decisions/D010-fixed-pipeline.md) | Fixed two-call pipeline instead of AI Agent node (phase 1) | decided | 2026-11-06 |
+| [D010](decisions/D010-fixed-pipeline.md) | Fixed two-call pipeline instead of AI Agent node (phase 1) | superseded | 2026-11-06 |
+| [D011](decisions/D011-ai-agent-node.md) | AI Agent node with GitHub tools for triage (phase 1) | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`
