@@ -2,7 +2,15 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F05, F06 · F05 done (spend limit set). F06 done: live workflow matches repo; sanitize script for future exports. Phase 1 complete.
+- 2026-11-06 · F05 · Measured cost ~$0.01 per triage (first run).
+- 2026-11-06 · F04 · First off-server backup OK; schedule weekly.
+- 2026-11-06 · F04, R6 · Daily encrypted off-server backup; F04 done, R6 mitigated.
+- 2026-11-06 · D012 · Webhook secret stays in the Code node (options A–D with pros/cons).
+- 2026-11-06 · F05 · Comments stay on the owner account (no bot account for now).
+- 2026-11-06 · F03, F05 · F03 done; first end-to-end triage on a test issue worked.
 - 2026-11-06 · D010, D011, F05 · Real agent preferred: D011 (AI Agent node + GitHub tools) supersedes D010; workflow rebuilt.
+- 2026-11-06 · F05 · Docs: n8n 2.x uses Publish instead of Activate.
 - 2026-11-06 · F05, D010 · Draft triage workflow (fixed two-call pipeline, Haiku); compose allows crypto in Code node; CI checks workflow has no secret.
 - 2026-11-06 · D009 · Decided: triage every issue with limits, cost cap $1/day.
 - 2026-11-06 · F04 · First backup OK.
