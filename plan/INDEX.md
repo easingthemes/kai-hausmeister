@@ -7,8 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
-2. Open security items: see private ops repo.
-3. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
+2. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
 
 ## Features
 
