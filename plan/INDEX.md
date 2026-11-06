@@ -7,7 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
-2. R11: ask GitHub Support to purge old unreferenced commits.
+2. Open security items: see private ops repo.
 3. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
 
 ## Features

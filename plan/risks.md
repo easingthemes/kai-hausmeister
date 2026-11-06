@@ -14,5 +14,4 @@ When a mitigation is done, set status and add a line to `log.md`.
 | R7 | Sandbox escape: untrusted code in phase 3 reaches host or secrets | med | high | separate server; network limited to GitHub + Anthropic; only on maintainer label | F08 | open |
 | R9 | Ops workflow `server-command` runs any command with deploy key; compromise of GitHub account = server access | low | high | non-root deploy user; dedicated key with no forwarding; 2FA on GitHub; `production` environment | F01, F04 | open |
 | R10 | n8n on shared server reads or breaks other apps' data (same user, Code node, prompt injection) | med | high | run n8n in Docker container with only its own volume (D003); no host mounts | F02, F04 | open |
-| R11 | Old force-pushed commits (from when the repo was private) are still reachable on GitHub by SHA and contain server specifics (no secrets, no IP) | med | low | GitHub Support request to purge unreferenced commits; keep server patched so the details go stale | – | open |
 | R8 | Outdated n8n image with known vulnerabilities | med | med | regular updates; pinned tag + update procedure (F04) | F04 | open |
