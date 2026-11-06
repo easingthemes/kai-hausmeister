@@ -6,7 +6,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** phase 1 live (testing) · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F05](features/F05-triage-comment.md): check cost per run in Anthropic console (data still pending).
+1. [F05](features/F05-triage-comment.md): confirm Anthropic workspace spend limit is set, then close F05.
 2. [F06](features/F06-workflow-export.md): export final workflow (placeholder secret).
 
 ## Features

@@ -25,7 +25,7 @@ New issue in target repo gets one comment from the agent: type, affected area, n
 - [ ] Anthropic workspace spend limit as hard stop
 - [x] prompt treats issue text as untrusted, delimited data (prompt injection, R1)
 - [x] comment marked as automated
-- [ ] check real cost per run in Anthropic console after first runs
+- [x] check real cost per run: ~$0.01 for the first test issue (Anthropic console, 2026-11-06)
 
 ## Acceptance
 - 3 test issues (bug, feature, nonsense) get sensible comments; nothing else changes in repo.

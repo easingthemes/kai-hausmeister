@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F05 · Measured cost ~$0.01 per triage (first run).
 - 2026-11-06 · F04 · First off-server backup OK; schedule weekly.
 - 2026-11-06 · F04, R6 · Daily encrypted off-server backup; F04 done, R6 mitigated.
 - 2026-11-06 · D012 · Webhook secret stays in the Code node (options A–D with pros/cons).
