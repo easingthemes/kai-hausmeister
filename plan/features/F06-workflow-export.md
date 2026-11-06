@@ -25,4 +25,5 @@ Workflow is reusable: JSON in `workflows/` + README how to import and configure.
 - Fresh n8n instance can import and run it by following README.
 
 ## Notes
+- 2026-11-06: deploys now go repo → n8n via the public API (D014); export stays for changes made in the UI.
 - 2026-11-06: **done.** Live workflow matches the repo template. A raw export contains the owner's name and email (project data); `sanitize.py` removes it.

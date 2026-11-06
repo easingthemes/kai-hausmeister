@@ -3,11 +3,12 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** phase 1 live · **Last updated:** 2026-11-06
+**Phase:** phase 2 live · **Last updated:** 2026-11-06
 
 ## Next up
-1. Watch the first real issues (quality, cost); adjust prompt or run cap if needed.
-2. [F07](features/F07-labels-duplicates.md): phase 2, labels + duplicates (decide first: set labels or only propose).
+1. Watch real issues (quality, labels, cost).
+2. Open security items: see private ops repo.
+3. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
 
 ## Features
 
@@ -20,7 +21,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | done | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | done | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | done | F05 |
-| [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | todo | F05 |
+| [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | done | F05 |
 | [F08](features/F08-sandbox-fix.md) | Phase 3: sandboxed fix → PR | 3 | todo | F07 |
 | [F09](features/F09-n8n-cloud-compare.md) | Run on n8n Cloud, compare | later | todo | F06 |
 <!-- /gen:features -->
@@ -44,6 +45,8 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D010](decisions/D010-fixed-pipeline.md) | Fixed two-call pipeline instead of AI Agent node (phase 1) | superseded | 2026-11-06 |
 | [D011](decisions/D011-ai-agent-node.md) | AI Agent node with GitHub tools for triage (phase 1) | decided | 2026-11-06 |
 | [D012](decisions/D012-webhook-secret-in-workflow.md) | Webhook secret stays in the Code node config | decided | 2026-11-06 |
+| [D013](decisions/D013-labels-and-duplicates.md) | Agent sets whitelisted labels and links possible duplicates | decided | 2026-11-06 |
+| [D014](decisions/D014-deploy-workflow-via-api.md) | Deploy workflows from the repo via the n8n public API | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`
