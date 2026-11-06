@@ -3,12 +3,12 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** phase 1 live · **Last updated:** 2026-11-06
+**Phase:** phase 2 live · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F07](features/F07-labels-duplicates.md): n8n API key + secrets, run "Deploy workflow" (D014), test with a duplicate issue.
+1. Watch real issues (quality, labels, cost).
 2. R11: ask GitHub Support to purge old unreferenced commits.
-3. Watch real issues (quality, cost).
+3. [F08](features/F08-sandbox-fix.md): phase 3 planning (separate sandbox server).
 
 ## Features
 
@@ -21,7 +21,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | done | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | done | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | done | F05 |
-| [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | in-progress | F05 |
+| [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | done | F05 |
 | [F08](features/F08-sandbox-fix.md) | Phase 3: sandboxed fix → PR | 3 | todo | F07 |
 | [F09](features/F09-n8n-cloud-compare.md) | Run on n8n Cloud, compare | later | todo | F06 |
 <!-- /gen:features -->
