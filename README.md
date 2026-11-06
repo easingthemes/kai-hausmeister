@@ -99,7 +99,7 @@ Anyone can open an issue, so every issue is treated as a possible prompt injecti
 |---|---|---|
 | 1 | Agentic triage comment (code-aware) | ✅ live |
 | 2 | Labels + duplicate detection | ✅ live |
-| 3 | **Autonomous fix**: a maintainer adds a fix label, Claude Code runs in an ephemeral GitHub Actions VM and opens a pull request for review ([D015](plan/decisions/D015-phase3-github-actions.md)) | 🛠 planned |
+| 3 | **Autonomous fix**: a maintainer adds a fix label, Claude Code runs in an isolated sandbox (GitHub Actions VM or own sandbox server, under evaluation) and opens a pull request for review ([D015](plan/decisions/D015-phase3-runtime.md)) | 🛠 planned |
 | – | Research: n8n vs GitHub Actions, where each fits best ([F10](plan/features/F10-n8n-vs-gh-actions.md)) | 🔍 next |
 | – | Same workflow on n8n Cloud, comparison | 🗓 later |
 

@@ -13,7 +13,7 @@ updated: 2026-11-06
 # F10: n8n vs GitHub Actions
 
 ## Goal
-Clear answer to "what does n8n add here?". Phases 1–2 (triage comment, labels, duplicates) could also run as a GitHub Actions workflow on `issues: opened`, like phase 3 does (D015).
+Clear answer to "what does n8n add here?". Phases 1–2 (triage comment, labels, duplicates) could also run as a GitHub Actions workflow on `issues: opened`, like phase 3 might (D015). The result also decides D015.
 
 ## Tasks
 - [ ] list what phases 1–3 need: trigger, secrets, agent loop, tools, limits/cost caps, logs, state (counters, seen issues), multi-repo

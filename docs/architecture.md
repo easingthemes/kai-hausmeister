@@ -3,7 +3,7 @@
 Hosting choice: [D001](../plan/decisions/D001-self-host-plus-template.md). Options and where n8n can run: [plan/research.md](../plan/research.md).
 
 ## How it connects to the target repo
-This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. For phases 1–2 the target repo needs no code changes; phase 3 adds a workflow file there (D015).
+This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. For phases 1–2 the target repo needs no code changes; phase 3 might add a workflow file there (D015, open).
 
 - **Trigger:** the target repo sends a webhook to `https://n8n.<domain>/webhook/...` on `issues: opened`.
   - **Chosen: n8n Webhook node.** Webhook is added once by hand in the target repo (Settings → Webhooks) with a secret; n8n verifies the signature. The token then needs no webhook permission.
@@ -11,7 +11,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - **Reading code:** agent reads files via GitHub API (contents endpoint), no clone needed.
 - **Duplicates:** agent searches open and closed issues via the GitHub search API.
 - **Comment / label:** fine-grained token, target repo only, `Issues: write` + `Contents: read`.
-- **Phase 3 (fix):** a GitHub Actions workflow in the target repo, triggered by a label, clones, branches and opens a PR with the job's own `GITHUB_TOKEN` (`contents`/`pull-requests: write`). Exception to "no changes in the target repo" ([D015](../plan/decisions/D015-phase3-github-actions.md)).
+- **Phase 3 (fix), open ([D015](../plan/decisions/D015-phase3-runtime.md)):** either a GitHub Actions workflow in the target repo, triggered by a label, with the job's own `GITHUB_TOKEN` (`contents`/`pull-requests: write`); or an own sandbox server started by n8n, with a separate token (`Contents: write`, `Pull requests: write`). Either way it clones, branches and opens a PR.
 - **More repos later:** add the webhook there and extend the token to that repo; same workflow.
 
 ## Server
@@ -20,12 +20,12 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
 - Workflows are deployed from this repo through the n8n public API, called on the server itself; `/api/*` is not reachable from outside ([D014](../plan/decisions/D014-deploy-workflow-via-api.md)).
 - Daily encrypted off-server backup (F04).
-- Phases 1–2 run here. Phase 3 runs on GitHub Actions runners (D015), not on this server.
+- Phases 1–2 run here. Phase 3 runs untrusted code, so never on this server: GitHub Actions runners or a separate sandbox server (D015, open).
 
 ## Flow (phases)
 1. **Triage comment** (live). Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file, search issues) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
 2. **Labels + duplicates** (live). Agent sets up to 3 whitelisted labels and links possible duplicates (open + closed) in the comment ([D013](../plan/decisions/D013-labels-and-duplicates.md)).
-3. **Fix in sandbox** (planned, F08). Maintainer adds a fix label (name decided in F08) → GitHub Actions in the target repo runs Claude Code on a fresh VM → PR for review. n8n is not involved ([D015](../plan/decisions/D015-phase3-github-actions.md)).
+3. **Fix in sandbox** (planned, F08). Maintainer adds a fix label (name decided in F08) → Claude Code runs in an isolated sandbox (GitHub Actions VM or own sandbox server, [D015](../plan/decisions/D015-phase3-runtime.md) open) → PR for review.
 
 ## Security
 - **Target repo is public: anyone can open an issue.** Issue text goes into the agent (prompt injection). Its damage is limited by the token below.
@@ -35,7 +35,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
   - `Metadata: Read-only`: added by GitHub automatically.
   - Nothing else: no code write, no PRs, no webhook or settings access. Worst case with this token is a bad comment or label, not a code change.
   - Stored only as an n8n credential on the server. Comments appear as the token owner's account (no bot account for now, F05).
-- **Phase 3 token:** the job's own short-lived `GITHUB_TOKEN`, with `permissions` limited to `contents`, `pull-requests` and `issues: write`; no personal token. Agent PRs need review, the agent never merges.
+- **Phase 3 token:** write access only in phase 3, never for triage. GitHub Actions: the job's own short-lived `GITHUB_TOKEN` with minimal `permissions`. Own server: a separate fine-grained token. Agent PRs need review, the agent never merges.
 - Phase 3 runs only on a label set by a maintainer, never automatically.
 - Limit iterations and tokens per run; log cost per run.
 - n8n behind HTTPS, strong owner password, regular image updates.

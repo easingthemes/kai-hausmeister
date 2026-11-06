@@ -3,11 +3,11 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** phases 1–2 live; phase 3 planned (GitHub Actions), paused until F10 · **Last updated:** 2026-11-06
+**Phase:** phases 1–2 live; phase 3 planned, runtime open (D015), paused until F10 · **Last updated:** 2026-11-06
 
 ## Next up
 1. Watch real issues (quality, labels, cost).
-2. [F10](features/F10-n8n-vs-gh-actions.md): research n8n vs GitHub Actions before building more.
+2. [F10](features/F10-n8n-vs-gh-actions.md): research n8n vs GitHub Actions; decides where phase 3 runs (D015).
 3. [F08](features/F08-sandbox-fix.md): phase 3, paused until F10.
 
 ## Features
@@ -38,7 +38,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D002](decisions/D002-self-host-first.md) | Self-host first, n8n Cloud evaluated later | decided | 2026-11-06 |
 | [D003](decisions/D003-docker-compose.md) | Docker Compose instead of npx n8n | decided | 2026-11-06 |
 | [D004](decisions/D004-existing-vps.md) | Phases 1–2 on existing small VPS | decided | 2026-11-06 |
-| [D005](decisions/D005-separate-repo.md) | Separate repo, target via webhook + GitHub API | superseded | 2026-11-06 |
+| [D005](decisions/D005-separate-repo.md) | Separate repo, target via webhook + GitHub API | decided | 2026-11-06 |
 | [D006](decisions/D006-webhook-node.md) | Webhook node + manual webhook (not GitHub Trigger node) | decided | 2026-11-06 |
 | [D007](decisions/D007-database.md) | SQLite or Postgres | decided | 2026-11-06 |
 | [D008](decisions/D008-ops-via-private-actions.md) | Server ops via GitHub Actions in a private repo | decided | 2026-11-06 |
@@ -48,7 +48,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D012](decisions/D012-webhook-secret-in-workflow.md) | Webhook secret stays in the Code node config | decided | 2026-11-06 |
 | [D013](decisions/D013-labels-and-duplicates.md) | Agent sets whitelisted labels and links possible duplicates | decided | 2026-11-06 |
 | [D014](decisions/D014-deploy-workflow-via-api.md) | Deploy workflows from the repo via the n8n public API | decided | 2026-11-06 |
-| [D015](decisions/D015-phase3-github-actions.md) | Phase 3 runs as GitHub Actions in the target repo, triggered by label | decided | 2026-11-06 |
+| [D015](decisions/D015-phase3-runtime.md) | Where phase 3 (fix → PR) runs: GitHub Actions, own sandbox or Managed Agents | proposed | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`

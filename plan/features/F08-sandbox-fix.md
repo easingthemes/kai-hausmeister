@@ -13,9 +13,9 @@ updated: 2026-11-06
 # F08: Sandbox fix
 
 ## Goal
-Maintainer adds a fix label to an issue → a GitHub Actions run in the target repo uses Claude Code to work on the issue and opens a PR. A human reviews and merges; the agent never merges.
+Maintainer adds a fix label to an issue → Claude Code works on the issue in an isolated sandbox and opens a PR. A human reviews and merges; the agent never merges. Where the sandbox runs is open (D015): GitHub Actions in the target repo (A) or own sandbox server started by n8n (B).
 
-## Flow
+## Flow (if option A)
 ```
 issue labeled (only triage/write users can label)
   → .github/workflows/<name>.yml in target repo (on: issues: labeled)
@@ -26,9 +26,10 @@ issue labeled (only triage/write users can label)
 
 ## Tasks
 - [x] answer Q3: no dx plugins for now (example only)
+- [ ] decide D015 (after F10): GitHub Actions or own sandbox server
 - [ ] choose label name and prompt (plain Claude Code, no dx skills)
-- [ ] reuse the owner's existing workflow from the other project as template (no project data copied)
-- [ ] workflow: `on: issues: types: [labeled]`, `if:` label in allowlist, `concurrency` per issue, `timeout-minutes`, max turns, model
+- [ ] (A) reuse the owner's existing workflow from the other project as template (no project data copied)
+- [ ] (A) workflow: `on: issues: types: [labeled]`, `if:` label in allowlist, `concurrency` per issue, `timeout-minutes`, max turns, model
 - [ ] `permissions`: `contents: write`, `pull-requests: write`, `issues: write`; nothing else
 - [ ] Anthropic auth: separate workspace + spend limit; federation if available, else API key secret
 - [ ] branch protection on the default branch: PR + review required
@@ -40,4 +41,4 @@ issue labeled (only triage/write users can label)
 
 ## Notes
 - 2026-11-06: paused. Q3: dx plugins not used (too much work to adapt to GitHub). Later idea: dx-aem-flow fixing itself with its own skills. Wait for F10 before building.
-- 2026-11-06: D015: GitHub Actions in the target repo; n8n not involved in phase 3.
+- 2026-11-06: D015 proposed, not final: leaning to GitHub Actions; own sandbox server still an option.

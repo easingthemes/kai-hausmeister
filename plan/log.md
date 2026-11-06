@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · D015, D005, D004 · D015 back to proposed (runtime not final: GitHub Actions vs own sandbox); D005 stays decided; docs list both options.
 - 2026-11-06 · D015, D004 · Phase 3 token (job GITHUB_TOKEN) in architecture security; D004 note: no separate server needed; INDEX phase line.
 - 2026-11-06 · D015 · Merged main into phase 3 plan; architecture + README phase 3 text follow D015 (GitHub Actions, label name open).
 - 2026-11-06 · F10, Q3, F08 · New research task n8n vs GitHub Actions; Q3 answered (no dx plugins in phase 3); F08 paused.

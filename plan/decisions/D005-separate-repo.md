@@ -1,11 +1,11 @@
 ---
 id: D005
 title: Separate repo, target via webhook + GitHub API
-status: superseded
+status: decided
 date: 2026-11-06
 features: [F03]
 supersedes: null
-superseded_by: D015
+superseded_by: null
 ---
 
 # D005: Separate repo for integration
@@ -21,9 +21,9 @@ Where the integration setup lives relative to the target repo (dx-aem-flow).
 | Inside target repo | everything in one place | mixes concerns; not reusable |
 
 ## Decision
-**Superseded by [D015](D015-phase3-github-actions.md) (2026-11-06) for phase 3 only: the fix agent runs as GitHub Actions in the target repo. Phases 1–2 still follow this decision.**
-
 Separate repo. Target connected only via webhook + GitHub API.
 
 ## Consequences
 More repos later = add webhook + extend token.
+
+Note 2026-11-06: phase 3 may need a workflow file in the target repo, if [D015](D015-phase3-runtime.md) option A is chosen. Then a new decision supersedes this one for phase 3.
