@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · – · README: screenshot of an executed workflow run (docs/img/workflow.png).
 - 2026-11-06 · F04, F05, R6 · Docs review: README/architecture match code and ops (weekly backup, status "live", limits as in workflow, ADR count without number); F05 iterations 10.
 - 2026-11-06 · D015, D005, D004 · D015 back to proposed (runtime not final: GitHub Actions vs own sandbox); D005 stays decided; docs list both options.
 - 2026-11-06 · D015, D004 · Phase 3 token (job GITHUB_TOKEN) in architecture security; D004 note: no separate server needed; INDEX phase line.

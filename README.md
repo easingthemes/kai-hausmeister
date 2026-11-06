@@ -68,6 +68,10 @@ flowchart LR
     L --> GH
 ```
 
+![n8n canvas of the triage workflow, executed run with all nodes green](docs/img/workflow.png)
+
+*The live workflow in n8n: one executed run, every node succeeded.*
+
 Built with **n8n** (self-hosted, Docker Compose behind Caddy/HTTPS), the n8n **AI Agent node** with LangChain-style tools, **Anthropic Claude**, and the **GitHub REST API**. For triage, the target repository needs no code changes, only a webhook.
 
 Node-by-node description: [workflows/README.md](workflows/README.md) · system design: [docs/architecture.md](docs/architecture.md)
