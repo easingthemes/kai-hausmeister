@@ -44,6 +44,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D009](decisions/D009-triage-all-issues.md) | Triage every new issue automatically, with hard limits | decided | 2026-11-06 |
 | [D010](decisions/D010-fixed-pipeline.md) | Fixed two-call pipeline instead of AI Agent node (phase 1) | superseded | 2026-11-06 |
 | [D011](decisions/D011-ai-agent-node.md) | AI Agent node with GitHub tools for triage (phase 1) | decided | 2026-11-06 |
+| [D012](decisions/D012-webhook-secret-in-workflow.md) | Webhook secret stays in the Code node config | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`

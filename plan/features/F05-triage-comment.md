@@ -4,7 +4,7 @@ title: "Phase 1: webhook → AI agent → comment"
 status: in-progress
 phase: 1
 depends_on: [F03, F04]
-decisions: [D006, D009, D011]
+decisions: [D006, D009, D011, D012]
 questions: [Q1]
 created: 2026-11-06
 updated: 2026-11-06
