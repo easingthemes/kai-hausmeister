@@ -1,24 +1,6 @@
 # Architecture
 
-## Hosting options
-
-| | Option | Pro | Con |
-|---|---|---|---|
-| A | Template only (workflow JSON + README) | no maintenance, no cost | does nothing by itself |
-| B | Self-host on a VPS (Docker Compose: n8n + DB + Caddy for HTTPS) | always on; receives GitHub webhooks; room for a sandbox (phase 3) | updates, backup and security are on us |
-| C | n8n Cloud | no maintenance | paid plan; no place for a sandbox |
-| D | **B + A** | live flow on the VPS + exported template in repo | slightly more work than B |
-
-**Chosen: D.** Only self-hosting allows phase 3; the exported template keeps the workflow reusable.
-n8n Community edition is free for own use (the license forbids offering n8n as a service to others).
-
-## Where n8n can run
-n8n is a **long-running server** (UI, webhook URL, run history, credentials):
-- **Self-host** (VPS, Docker; at scale: Postgres + Redis + workers in queue mode, or Kubernetes).
-- **n8n Cloud** (priced per plan and executions).
-- **Managed third-party hosting** (Railway, Render, Elestio etc.).
-- **Local + tunnel** (ngrok/cloudflared): development only.
-- **GitHub Actions is not hosting for n8n**: no UI, no stable webhook, no history. A plain GH Action (issue opened → LLM) is an alternative to n8n, not a place to run it. Out of scope here, since this project is an n8n integration.
+Hosting choice: [D001](../plan/decisions/D001-self-host-plus-template.md). Options and where n8n can run: [plan/research.md](../plan/research.md).
 
 ## How it connects to the target repo
 This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. The target repo needs no code changes.

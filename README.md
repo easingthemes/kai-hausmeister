@@ -7,16 +7,16 @@ First target repo: [dx-aem-flow](https://github.com/easingthemes/dx-aem-flow).
 The n8n workflow is self-hosted and also exported to this repo as a reusable template.
 
 ## Status
-Planning. Nothing deployed yet. See [docs/roadmap.md](docs/roadmap.md).
+Planning. Nothing deployed yet. See [plan/INDEX.md](plan/INDEX.md).
 
 ## Docs
-- [docs/architecture.md](docs/architecture.md): hosting, flow phases, security
-- [docs/decisions.md](docs/decisions.md): decision log
-- [docs/roadmap.md](docs/roadmap.md): steps and open questions
+- [plan/INDEX.md](plan/INDEX.md): features, decisions, questions, status
+- [docs/architecture.md](docs/architecture.md): how it connects, flow phases, security
 
 ## Layout (planned)
 ```
 docker/      docker-compose.yml, Caddy snippet, .env.example
 workflows/   exported n8n workflow JSON (template)
-docs/        architecture, decisions, roadmap
+plan/        index, features, decisions, research, questions, log
+docs/        architecture
 ```
