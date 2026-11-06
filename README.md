@@ -8,6 +8,7 @@
 ![Docker](https://img.shields.io/badge/self--hosted-Docker%20Compose-2496ED?logo=docker&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20production-2ea44f)
 ![Cost](https://img.shields.io/badge/cost-~%240.01%20per%20issue-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 > *Hausmeister* (German): the caretaker who keeps a building in order. This one keeps an issue tracker in order.
 
@@ -121,8 +122,19 @@ plan/        features, decision records (ADRs), risks, research, change log
 
 ## Author
 
-Built by [@easingthemes](https://github.com/easingthemes). Work focus: AI agents, agentic workflows and n8n automation for engineering teams.
-Want this, or a custom agentic workflow, for your team? Open an issue or reach out on GitHub.
+Built by **[easingthemes](https://github.com/easingthemes)**: AI agents, agentic workflows and n8n automation for engineering teams.
+
+More agentic work:
+- [dx-aem-flow](https://github.com/easingthemes/dx-aem-flow): AI development plugins for Claude Code & Copilot CLI, from requirements to PR, with autonomous CI agents
+- [aem-mcp-server](https://github.com/easingthemes/aem-mcp-server): MCP server for Adobe Experience Manager
+- [ki-bundestag](https://github.com/easingthemes/ki-bundestag): multi-agent AI parliament simulation
+- [ssh-deploy](https://github.com/easingthemes/ssh-deploy): GitHub Action for rsync deployments, 1.3k★
+
+Want this, or a custom agentic workflow, for your team? See the [portfolio on GitHub](https://github.com/easingthemes) and get in touch.
+
+## License
+
+[MIT](LICENSE)
 
 ---
 
