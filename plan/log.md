@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F04, R6 · Daily encrypted off-server backup; F04 done, R6 mitigated.
 - 2026-11-06 · D012 · Webhook secret stays in the Code node (options A–D with pros/cons).
 - 2026-11-06 · F05 · Comments stay on the owner account (no bot account for now).
 - 2026-11-06 · F03, F05 · F03 done; first end-to-end triage on a test issue worked.

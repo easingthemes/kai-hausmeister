@@ -7,7 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. [F05](features/F05-triage-comment.md): check cost per run in Anthropic console (data still pending).
-2. [F04](features/F04-n8n-live.md): off-server copy of backups.
+2. Run the off-server backup workflow once and check the artifact.
 3. [F06](features/F06-workflow-export.md): export final workflow (placeholder secret).
 
 ## Features
@@ -18,7 +18,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F01](features/F01-server-check.md) | Check server (RAM, Docker) | 0 setup | done | – |
 | [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | done | F01, D007 |
 | [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | done | F02 |
-| [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | in-progress | F02 |
+| [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | done | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | in-progress | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | todo | F05 |
 | [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | todo | F05 |
