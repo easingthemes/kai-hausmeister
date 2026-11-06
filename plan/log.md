@@ -2,6 +2,8 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · – · MIT license; README author section links GitHub portfolio and related projects.
+- 2026-11-06 · – · README rewritten as project landing page (why, features, architecture diagram, security layers, roadmap, keywords).
 - 2026-11-06 · – · Architecture: security section lists exact GitHub token permissions (labels need no extra scope).
 - 2026-11-06 · – · README and architecture updated to current state (phases 1–2 live, deploy via API, duplicate search).
 - 2026-11-06 · F07, D014 · Deploy via API works; Caddy blocks /api from outside; F07 done (duplicate found, labels set). Phase 2 complete.
