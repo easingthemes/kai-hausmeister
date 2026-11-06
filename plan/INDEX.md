@@ -6,8 +6,8 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** planning · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F02](features/F02-docker-stack.md): server prep (swap, Docker, Caddy sites folder) via ops workflow.
-2. [F02](features/F02-docker-stack.md): DNS record, Caddy `import` line, first deploy.
+1. [F02](features/F02-docker-stack.md): Caddy `import` line in the main Caddyfile.
+2. [F02](features/F02-docker-stack.md): first deploy, then [F04](features/F04-n8n-live.md) owner account.
 
 ## Features
 

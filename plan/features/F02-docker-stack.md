@@ -19,9 +19,9 @@ updated: 2026-11-06
 - [x] `docker/docker-compose.yml` (n8n, SQLite, named volume, port on localhost only, memory limit, log rotation, pruning)
 - [x] `docker/n8n.caddy` site file
 - [x] `docker/.env.example` (names only)
-- [ ] server prep (private ops repo, root once): swap, Docker, Caddy sites folder
+- [x] server prep (private ops repo, root once): swap, Docker, Caddy sites folder
 - [ ] main Caddyfile gets an `import` of the sites folder (in the project that owns it)
-- [ ] DNS A record `n8n.<domain>`
+- [x] DNS A record for the n8n hostname
 - [ ] ops workflow: copy files, write `.env` from secrets, `docker compose up -d`, deploy Caddy site
 
 ## Acceptance
@@ -29,4 +29,5 @@ updated: 2026-11-06
 
 ## Notes
 - 2026-11-06: main Caddyfile is managed and overwritten by another project's deploy. n8n block must live in a separate imported file, else next deploy deletes it.
+- 2026-11-06: server prep done (swap, Docker, Caddy sites folder); DNS record added. Details in private ops repo.
 - 2026-11-06: unblocked: D003 Docker and D007 SQLite decided. Compose files written.
