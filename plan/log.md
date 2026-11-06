@@ -2,6 +2,8 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · – · Architecture: security section lists exact GitHub token permissions (labels need no extra scope).
+- 2026-11-06 · – · README and architecture updated to current state (phases 1–2 live, deploy via API, duplicate search).
 - 2026-11-06 · F07, D014 · Deploy via API works; Caddy blocks /api from outside; F07 done (duplicate found, labels set). Phase 2 complete.
 - 2026-11-06 · D014 · Workflows deploy from the repo via n8n public API (researched options); Caddy blocks /api/* from outside.
 - 2026-11-06 · D013, F07 · Whitelisted labels + duplicate search (open + closed) added to the workflow.
