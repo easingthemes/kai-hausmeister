@@ -19,7 +19,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 - Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a site file imported by the main Caddyfile.
 - n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
 - Workflows are deployed from this repo through the n8n public API, called on the server itself; `/api/*` is not reachable from outside ([D014](../plan/decisions/D014-deploy-workflow-via-api.md)).
-- Daily encrypted off-server backup (F04).
+- Weekly encrypted off-server backup, kept 30 days (F04).
 - Phases 1–2 run here. Phase 3 runs untrusted code, so never on this server: GitHub Actions runners or a separate sandbox server (D015, open).
 
 ## Flow (phases)

@@ -6,7 +6,7 @@
 ![Claude](https://img.shields.io/badge/LLM-Claude%20Haiku-D97757?logo=anthropic&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-Webhooks%20%2B%20REST%20API-181717?logo=github)
 ![Docker](https://img.shields.io/badge/self--hosted-Docker%20Compose-2496ED?logo=docker&logoColor=white)
-![Status](https://img.shields.io/badge/status-in%20production-2ea44f)
+![Status](https://img.shields.io/badge/status-live-2ea44f)
 ![Cost](https://img.shields.io/badge/cost-~%240.01%20per%20issue-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -31,6 +31,8 @@ When an issue is opened, within seconds and without a human:
 
 <details>
 <summary>Example triage comment (illustrative)</summary>
+
+Real output on a public test issue: [dx-aem-flow#242](https://github.com/easingthemes/dx-aem-flow/issues/242).
 
 ```markdown
 **Type:** bug (confidence: high)
@@ -82,16 +84,16 @@ Anyone can open an issue, so every issue is treated as a possible prompt injecti
 | **Read-only tools** | The agent can only list, read and search. It cannot write code. |
 | **Least-privilege token** | Fine-grained, one repo, `Issues: write` + `Contents: read`. Worst case is a bad comment, never a code change. |
 | **Output sanitizing** | Strips images, external links and @mentions. Labels must be on a whitelist. |
-| **Hard limits** | Max 10 agent iterations, 20 runs/day, 3 issues per author/day, $1/day spend cap. No bots, no PRs. |
-| **Isolation** | n8n runs in its own container with only its own volume. The API is not reachable from outside. |
+| **Hard limits** | Max 10 agent iterations, 20 runs/day (sized for a $1/day budget), 3 issues per author/day, spend limit on the provider side. No bots, no PRs. |
+| **Isolation** | n8n runs in its own container with only its own volume. The n8n public API (`/api/*`) is blocked at the proxy; deploys use it only from the server. |
 
 ## Production-grade operations
 
 - **GitOps for n8n**: the workflow JSON in this repo is the source of truth. Merged changes are deployed to the running instance through the n8n public API. Same workflow id, same webhook URL, no manual import ([D014](plan/decisions/D014-deploy-workflow-via-api.md)).
 - **Secret-safe exports**: `workflows/sanitize.py` removes instance data and refuses to write if a secret or an email address is left. CI blocks secrets as well.
-- **Backups**: daily encrypted off-server backup, tested.
-- **Measured cost**: about $0.01 per triage, plus a spend limit on the provider side.
-- **Documented decisions**: 14 architecture decision records with options, pros and cons ([plan/](plan/INDEX.md)).
+- **Backups**: weekly encrypted off-server backup (kept 30 days), restore steps documented.
+- **Cost**: ~$0.01 per issue (first runs), plus a spend limit on the provider side.
+- **Documented decisions**: every design choice recorded as an ADR with options, pros and cons ([plan/](plan/INDEX.md)).
 
 ## Roadmap
 
