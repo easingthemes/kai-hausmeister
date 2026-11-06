@@ -1,24 +1,6 @@
 # Architecture
 
-## Hosting options
-
-| | Option | Pro | Con |
-|---|---|---|---|
-| A | Template only (workflow JSON + README) | no maintenance, no cost | does nothing by itself |
-| B | Self-host on a VPS (Docker Compose: n8n + DB + Caddy for HTTPS) | always on; receives GitHub webhooks; room for a sandbox (phase 3) | updates, backup and security are on us |
-| C | n8n Cloud | no maintenance | paid plan; no place for a sandbox |
-| D | **B + A** | live flow on the VPS + exported template in repo | slightly more work than B |
-
-**Chosen: D.** Only self-hosting allows phase 3; the exported template keeps the workflow reusable.
-n8n Community edition is free for own use (the license forbids offering n8n as a service to others).
-
-## Where n8n can run
-n8n is a **long-running server** (UI, webhook URL, run history, credentials):
-- **Self-host** (VPS, Docker; at scale: Postgres + Redis + workers in queue mode, or Kubernetes).
-- **n8n Cloud** (priced per plan and executions).
-- **Managed third-party hosting** (Railway, Render, Elestio etc.).
-- **Local + tunnel** (ngrok/cloudflared): development only.
-- **GitHub Actions is not hosting for n8n**: no UI, no stable webhook, no history. A plain GH Action (issue opened → LLM) is an alternative to n8n, not a place to run it. Out of scope here, since this project is an n8n integration.
+Hosting choice: [D001](../plan/decisions/D001-self-host-plus-template.md). Options and where n8n can run: [plan/research.md](../plan/research.md).
 
 ## How it connects to the target repo
 This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. The target repo needs no code changes.
@@ -33,11 +15,12 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 
 ## Server
 - A small VPS.
-- Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a Caddyfile entry.
+- Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a site file imported by the main Caddyfile.
+- n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
 - Phases 1–2 run here. Phase 3 (sandbox running untrusted code) should get a separate small server.
 
 ## Flow (phases)
-1. **Triage comment.** Webhook node (issues: opened, signature check) → AI Agent (Anthropic Chat Model, tool: read file from repo) → GitHub: create comment.
+1. **Triage comment.** Webhook (issues: opened, signature check) → guards (D009) → AI Agent (Claude Haiku, read-only tools: list directory, read file) → GitHub comment ([D011](../plan/decisions/D011-ai-agent-node.md)); details in [`workflows/README.md`](../workflows/README.md).
 2. **Labels + duplicates.** Agent proposes a label and links similar open issues.
 3. **Fix in sandbox.** Maintainer adds a label (e.g. `agent:fix`) → n8n starts Claude Code headless in a Docker container (network limited to GitHub/Anthropic) → PR.
 
