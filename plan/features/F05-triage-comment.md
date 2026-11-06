@@ -17,7 +17,9 @@ New issue in target repo gets one comment from the agent: type, affected area, n
 
 ## Tasks
 - [x] workflow drafted: `workflows/triage.json` (D011: AI Agent node + read-only GitHub tools, Haiku)
-- [ ] import in n8n, set credentials + webhook secret, test with a manual run
+- [x] import in n8n, set credentials + webhook secret, publish
+- [x] end-to-end test: test issue in target repo got a triage comment (2026-11-06)
+- [ ] comments are posted as the token owner's account; consider a dedicated bot account or GitHub App
 - [x] verify `X-Hub-Signature-256` (HMAC SHA-256 over raw body with webhook secret); reject otherwise
 - [x] guards from D009: max 8 iterations, daily run cap 20 (cost proxy for $1/day, D011), max 3 issues per author per day, ignore bots, truncate issue text
 - [ ] Anthropic workspace spend limit as hard stop
@@ -29,5 +31,6 @@ New issue in target repo gets one comment from the agent: type, affected area, n
 - 3 test issues (bug, feature, nonsense) get sensible comments; nothing else changes in repo.
 
 ## Notes
+- 2026-11-06: **first end-to-end run OK.** Agent browsed the repo, read the relevant skill file, posted a structured comment (type, area, summary, missing info, next steps). File references checked and correct. Missed that the target README already documents the prerequisite; acceptable for a first triage.
 - 2026-11-06: switched to AI Agent node (D011 supersedes D010).
 - 2026-11-06: draft workflow written; needs `NODE_FUNCTION_ALLOW_BUILTIN=crypto` (compose) and a redeploy. Not yet tested against real n8n.

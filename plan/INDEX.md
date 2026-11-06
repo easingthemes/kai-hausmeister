@@ -3,12 +3,12 @@
 Single entry point for status. Read this first, then open only the files you need.
 Feature and decision tables are generated from the YAML headers by `python3 plan/check.py --write`. Do not edit them by hand (rules: [CLAUDE.md](../CLAUDE.md)).
 
-**Phase:** planning · **Last updated:** 2026-11-06
+**Phase:** phase 1 live (testing) · **Last updated:** 2026-11-06
 
 ## Next up
-1. [F04](features/F04-n8n-live.md): off-server copy of backups (last open task).
-2. [F05](features/F05-triage-comment.md): redeploy (crypto env), import `workflows/triage.json`, test.
-3. [F03](features/F03-github-access.md): token + n8n credential now; webhook after F05 guards.
+1. [F05](features/F05-triage-comment.md): check cost per run in Anthropic console; decide on bot account for comments.
+2. [F04](features/F04-n8n-live.md): off-server copy of backups.
+3. [F06](features/F06-workflow-export.md): export final workflow (placeholder secret).
 
 ## Features
 
@@ -17,7 +17,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 |---|---|---|---|---|
 | [F01](features/F01-server-check.md) | Check server (RAM, Docker) | 0 setup | done | – |
 | [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | done | F01, D007 |
-| [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | todo | F04 |
+| [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | done | F02 |
 | [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | in-progress | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | in-progress | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | todo | F05 |
