@@ -3,6 +3,7 @@
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
 - 2026-11-06 · D010, D011, F05 · Real agent preferred: D011 (AI Agent node + GitHub tools) supersedes D010; workflow rebuilt.
+- 2026-11-06 · F05 · Docs: n8n 2.x uses Publish instead of Activate.
 - 2026-11-06 · F05, D010 · Draft triage workflow (fixed two-call pipeline, Haiku); compose allows crypto in Code node; CI checks workflow has no secret.
 - 2026-11-06 · D009 · Decided: triage every issue with limits, cost cap $1/day.
 - 2026-11-06 · F04 · First backup OK.

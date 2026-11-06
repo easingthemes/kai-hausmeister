@@ -27,7 +27,7 @@ GitHub webhook → Verify & filter → Get issue → Guards → Triage agent →
 3. Credentials: select yours in **Get issue**, **Post comment**, **List directory**, **Read file** (GitHub) and **Claude Haiku** (Anthropic). Names in the file: `GitHub dx-aem-flow`, `Anthropic hausmeister`.
 4. **Claude Haiku** node: check the model is `claude-haiku-5-5` (pick it from the list if the field is empty).
 5. **Verify & filter**: set `CONFIG.webhookSecret`. Repo and branch (`main`) are also in the two tool URLs.
-6. Activate. Production URL: `https://<n8n host>/webhook/github-issues`.
+6. **Publish** (n8n 2.x: changes autosave as drafts; Publish makes them live, replaces the old Activate toggle). Production URL: `https://<n8n host>/webhook/github-issues`.
 7. Add the webhook in the target repo (F03): that URL, `application/json`, same secret, event **Issues** only.
 
 **Never commit the workflow with the real secret.** When exporting again, put `REPLACE_WITH_WEBHOOK_SECRET` back; CI fails otherwise.
