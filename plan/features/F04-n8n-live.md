@@ -17,7 +17,7 @@ n8n running on the VPS, owner account created, basic ops known.
 
 ## Tasks
 - [ ] start stack, create owner account (strong password)
-- [ ] backup plan for n8n data volume (and DB)
+- [ ] backup plan for n8n volume + `N8N_ENCRYPTION_KEY`
 - [ ] update procedure (pull image, restart) written down
 
 ## Acceptance

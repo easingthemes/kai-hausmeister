@@ -6,8 +6,8 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 **Phase:** planning · **Last updated:** 2026-11-06
 
 ## Next up
-1. Confirm [D003](decisions/D003-docker-compose.md) (Docker) and [D007](decisions/D007-database.md) (SQLite recommended): unblocks F02.
-2. Server prep: swap, Docker install (root, once), Caddy `import` line.
+1. [F02](features/F02-docker-stack.md): server prep (swap, Docker, Caddy sites folder) via ops workflow.
+2. [F02](features/F02-docker-stack.md): DNS record, Caddy `import` line, first deploy.
 
 ## Features
 
@@ -15,7 +15,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | ID | Feature | Phase | Status | Depends on |
 |---|---|---|---|---|
 | [F01](features/F01-server-check.md) | Check server (RAM, Docker) | 0 setup | done | – |
-| [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | blocked | F01, D007 |
+| [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | in-progress | F01, D007 |
 | [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | todo | F04 |
 | [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | todo | F02 |
 | [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | todo | F03, F04 |
@@ -34,18 +34,18 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 |---|---|---|---|
 | [D001](decisions/D001-self-host-plus-template.md) | Self-hosted n8n + exported template in repo | decided | 2026-11-06 |
 | [D002](decisions/D002-self-host-first.md) | Self-host first, n8n Cloud evaluated later | decided | 2026-11-06 |
-| [D003](decisions/D003-docker-compose.md) | Docker Compose instead of npx n8n | proposed | 2026-11-06 |
+| [D003](decisions/D003-docker-compose.md) | Docker Compose instead of npx n8n | decided | 2026-11-06 |
 | [D004](decisions/D004-existing-vps.md) | Phases 1–2 on existing small VPS | decided | 2026-11-06 |
 | [D005](decisions/D005-separate-repo.md) | Separate repo, target via webhook + GitHub API | decided | 2026-11-06 |
 | [D006](decisions/D006-webhook-node.md) | Webhook node + manual webhook (not GitHub Trigger node) | decided | 2026-11-06 |
-| [D007](decisions/D007-database.md) | SQLite or Postgres | open | – |
+| [D007](decisions/D007-database.md) | SQLite or Postgres | decided | 2026-11-06 |
 | [D008](decisions/D008-ops-via-private-actions.md) | Server ops via GitHub Actions in a private repo | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`
 
 ## Open questions
-See [questions.md](questions.md). Open now: Q1, Q2.
+See [questions.md](questions.md). Open now: Q1.
 
 ## Risks
 See [risks.md](risks.md). Top open: R1 (prompt injection), R2 (LLM cost).

@@ -13,9 +13,9 @@ Planning. Nothing deployed yet. See [plan/INDEX.md](plan/INDEX.md).
 - [plan/INDEX.md](plan/INDEX.md): features, decisions, questions, status
 - [docs/architecture.md](docs/architecture.md): how it connects, flow phases, security
 
-## Layout (planned)
+## Layout
 ```
-docker/      docker-compose.yml, Caddy snippet, .env.example
+docker/      docker-compose.yml, n8n.caddy, .env.example
 workflows/   exported n8n workflow JSON (template)
 plan/        index, features, decisions, research, questions, log
 docs/        architecture

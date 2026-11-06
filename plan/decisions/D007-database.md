@@ -1,8 +1,8 @@
 ---
 id: D007
 title: SQLite or Postgres
-status: open
-date:
+status: decided
+date: 2026-11-06
 features: [F02]
 supersedes: null
 superseded_by: null
@@ -21,7 +21,8 @@ n8n stores workflows, credentials and run history in a DB. Blocks F02.
 | Postgres | production setup; needed for queue mode later | extra container + RAM; more to back up and update |
 
 ## Decision
-Open, **recommendation: SQLite** + execution data pruning. F01: RAM would fit Postgres too, but single user + few runs per day don't need it. Revisit if queue mode is needed.
+**SQLite**, because of the project scope: one user, a few issues per day, one n8n instance. Postgres would fit in RAM (F01), but its extra service, backup and updates are not worth it at this size. Execution data pruning is on to keep the DB file small.
 
 ## Consequences
-Postgres → extra service in compose and backup job.
+- Backup = n8n volume + `N8N_ENCRYPTION_KEY`.
+- Revisit (new decision, `supersedes: D007`) if we need queue mode, several instances, or many repos with high issue volume.

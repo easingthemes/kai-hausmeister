@@ -1,0 +1,6 @@
+# Caddy site for n8n. Deployed into the folder the main Caddyfile imports.
+# {$N8N_HOST} is replaced by the ops workflow with the real hostname.
+{$N8N_HOST} {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:5678
+}

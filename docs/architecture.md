@@ -15,7 +15,8 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
 
 ## Server
 - A small VPS.
-- Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a Caddyfile entry.
+- Caddy already in front (HTTPS). n8n goes behind it as `n8n.<domain>`: one DNS A record + a site file imported by the main Caddyfile.
+- n8n runs in Docker Compose with SQLite ([D003](../plan/decisions/D003-docker-compose.md), [D007](../plan/decisions/D007-database.md)), port only on localhost. Files: [`docker/`](../docker/).
 - Phases 1–2 run here. Phase 3 (sandbox running untrusted code) should get a separate small server.
 
 ## Flow (phases)
