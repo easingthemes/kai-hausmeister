@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F02 · Caddy import line prepared in owning project; ops repo got caddy-check / caddy-site actions.
 - 2026-11-06 · F02 · Server prep done (swap, Docker, Caddy sites folder), DNS record added.
 - 2026-11-06 · D003, D007, Q2, F02 · Docker + SQLite decided (SQLite because of project scope); compose, Caddy site, .env.example added.
 - 2026-11-06 · F01, F02, D003, D007, R10 · Removed server specifics from public repo; moved to private ops repo.

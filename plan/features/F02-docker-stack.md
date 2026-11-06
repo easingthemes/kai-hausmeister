@@ -29,5 +29,6 @@ updated: 2026-11-06
 
 ## Notes
 - 2026-11-06: main Caddyfile is managed and overwritten by another project's deploy. n8n block must live in a separate imported file, else next deploy deletes it.
+- 2026-11-06: `import` line prepared on a branch in the project that owns the main Caddyfile; needs merge + deploy there. Ops repo only writes the n8n site file (one owner per file).
 - 2026-11-06: server prep done (swap, Docker, Caddy sites folder); DNS record added. Details in private ops repo.
 - 2026-11-06: unblocked: D003 Docker and D007 SQLite decided. Compose files written.
