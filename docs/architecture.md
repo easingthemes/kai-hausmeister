@@ -3,7 +3,7 @@
 Hosting choice: [D001](../plan/decisions/D001-self-host-plus-template.md). Options and where n8n can run: [plan/research.md](../plan/research.md).
 
 ## How it connects to the target repo
-This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. The target repo needs no code changes.
+This repo holds only the setup (`docker/`, exported `workflows/`). The workflow itself runs in n8n on the server and talks to the target repo through the GitHub API. For phases 1–2 the target repo needs no code changes; phase 3 adds a workflow file there (D015).
 
 - **Trigger:** the target repo sends a webhook to `https://n8n.<domain>/webhook/...` on `issues: opened`.
   - **Chosen: n8n Webhook node.** Webhook is added once by hand in the target repo (Settings → Webhooks) with a secret; n8n verifies the signature. The token then needs no webhook permission.
@@ -35,6 +35,7 @@ This repo holds only the setup (`docker/`, exported `workflows/`). The workflow 
   - `Metadata: Read-only`: added by GitHub automatically.
   - Nothing else: no code write, no PRs, no webhook or settings access. Worst case with this token is a bad comment or label, not a code change.
   - Stored only as an n8n credential on the server. Comments appear as the token owner's account (no bot account for now, F05).
+- **Phase 3 token:** the job's own short-lived `GITHUB_TOKEN`, with `permissions` limited to `contents`, `pull-requests` and `issues: write`; no personal token. Agent PRs need review, the agent never merges.
 - Phase 3 runs only on a label set by a maintainer, never automatically.
 - Limit iterations and tokens per run; log cost per run.
 - n8n behind HTTPS, strong owner password, regular image updates.
