@@ -26,6 +26,8 @@ services:
       EXECUTIONS_DATA_PRUNE_MAX_COUNT: "5000"
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
       N8N_RUNNERS_ENABLED: "true"
+      # Code node may use only the crypto module (webhook signature check, F05).
+      NODE_FUNCTION_ALLOW_BUILTIN: crypto
       N8N_DIAGNOSTICS_ENABLED: "false"
       N8N_PERSONALIZATION_ENABLED: "false"
     volumes:

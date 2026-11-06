@@ -1,13 +1,18 @@
 name: plan-check
 on:
   pull_request:
-    paths: ["plan/**"]
+    paths: ["plan/**", "workflows/**"]
   push:
     branches: [main]
-    paths: ["plan/**"]
+    paths: ["plan/**", "workflows/**"]
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: python3 plan/check.py
+      - name: Exported workflows keep placeholders, no secrets
+        run: |
+          for f in workflows/*.json; do
+            grep -q 'REPLACE_WITH_WEBHOOK_SECRET' "$f" || { echo "$f: webhookSecret placeholder missing"; exit 1; }
+          done

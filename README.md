@@ -16,7 +16,7 @@ Planning. Nothing deployed yet. See [plan/INDEX.md](plan/INDEX.md).
 ## Layout
 ```
 docker/      docker-compose.yml, n8n.caddy, .env.example
-workflows/   exported n8n workflow JSON (template)
+workflows/   exported n8n workflow JSON (template), see workflows/README.md
 plan/        index, features, decisions, research, questions, log
 docs/        architecture
 ```

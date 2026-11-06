@@ -2,6 +2,7 @@
 
 One line per change, newest on top: `YYYY-MM-DD · ID · what changed`.
 
+- 2026-11-06 · F05, D010 · Draft triage workflow (fixed two-call pipeline, Haiku); compose allows crypto in Code node; CI checks workflow has no secret.
 - 2026-11-06 · D009 · Decided: triage every issue with limits, cost cap $1/day.
 - 2026-11-06 · F04 · First backup OK.
 - 2026-11-06 · Q1, D009, R2, F03, F04, F05 · Anyone can open issues: D009 proposed (auto triage with hard limits); update procedure written.

@@ -7,7 +7,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 
 ## Next up
 1. [F04](features/F04-n8n-live.md): off-server copy of backups (last open task).
-2. [F05](features/F05-triage-comment.md): build triage workflow with D009 guards ($1/day).
+2. [F05](features/F05-triage-comment.md): redeploy (crypto env), import `workflows/triage.json`, test.
 3. [F03](features/F03-github-access.md): token + n8n credential now; webhook after F05 guards.
 
 ## Features
@@ -19,7 +19,7 @@ Feature and decision tables are generated from the YAML headers by `python3 plan
 | [F02](features/F02-docker-stack.md) | Docker stack: compose, Caddy, .env.example, DNS | 0 setup | done | F01, D007 |
 | [F03](features/F03-github-access.md) | Webhook + fine-grained token in target repo | 0 setup | todo | F04 |
 | [F04](features/F04-n8n-live.md) | n8n live behind HTTPS, owner account | 0 setup | in-progress | F02 |
-| [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | todo | F03, F04 |
+| [F05](features/F05-triage-comment.md) | Phase 1: webhook → AI agent → comment | 1 | in-progress | F03, F04 |
 | [F06](features/F06-workflow-export.md) | Export workflow JSON + setup docs | 1 | todo | F05 |
 | [F07](features/F07-labels-duplicates.md) | Phase 2: labels + duplicate detection | 2 | todo | F05 |
 | [F08](features/F08-sandbox-fix.md) | Phase 3: sandboxed fix → PR | 3 | todo | F07 |
@@ -42,6 +42,7 @@ Status values: `todo` · `in-progress` · `blocked` · `done` · `dropped`
 | [D007](decisions/D007-database.md) | SQLite or Postgres | decided | 2026-11-06 |
 | [D008](decisions/D008-ops-via-private-actions.md) | Server ops via GitHub Actions in a private repo | decided | 2026-11-06 |
 | [D009](decisions/D009-triage-all-issues.md) | Triage every new issue automatically, with hard limits | decided | 2026-11-06 |
+| [D010](decisions/D010-fixed-pipeline.md) | Fixed two-call pipeline instead of AI Agent node (phase 1) | decided | 2026-11-06 |
 <!-- /gen:decisions -->
 
 Status values: `open` · `proposed` · `decided` · `superseded`
